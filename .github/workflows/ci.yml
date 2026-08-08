@@ -35,4 +35,4 @@ jobs:
         run: pytest project/tests/ -v
 
       - name: Build Docker image
-        run: docker build -t breast-cancer-api:${{ github.sha }} .
+        run: docker build -t breast-cancer-api:${{ github.sha }} ./project
