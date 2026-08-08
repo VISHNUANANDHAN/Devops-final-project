@@ -22,14 +22,14 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r project/requirements.txt
 
       - name: Prepare data and train model
         # Produces data/raw/data.csv and models/*.pkl so the API
         # tests below have real artifacts to load.
         run: |
-          python src/prepare_data.py
-          python src/train.py
+          python project/src/prepare_data.py
+          python project/src/train.py
 
       - name: Run tests
         run: pytest tests/ -v
