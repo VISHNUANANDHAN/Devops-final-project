@@ -32,7 +32,7 @@ jobs:
           python project/src/train.py
 
       - name: Run tests
-        run: pytest tests/ -v
+        run: pytest project/tests/ -v
 
       - name: Build Docker image
         run: docker build -t breast-cancer-api:${{ github.sha }} .
